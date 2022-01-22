@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="src/style.css" />
+    <title>React Pizza</title>
+  </head>
+
+  <body>
+    <div class="container" id="app-container">
+      <div class="pizza-container">
+        <div class="pizza-container__header">
+          <h2>React Pizza</h2>
+        </div>
+
+        <div class="pizza-list">
+          <div
+            class="pizza-list__element d-flex justify-content-between m-4 p-1"
+          >
+            <div class="pizza-list__element__first">
+              <div
+                class="pizza-list__element-namespace my-2 d-flex justify-content-center align-items-center"
+              >
+                <h3 class="pizza-list__element-heading">
+                  Kéksajtos négy évszak
+                </h3>
+                <img
+                  class="chili-rate"
+                  src="./src/images/chili_hot.svg"
+                  alt="chili rate: HOT!"
+                  title="Chili rate: HOT!"
+                />
+              </div>
+              <ul
+                class="pizza-list__element__toppings d-md-flex d-block flex-wrap"
+              >
+                <li
+                  class="d-flex justify-content-center mb-sm-3 m-md-1 p-0 bg-transparent"
+                >
+                  <img
+                    class="sauce-icon"
+                    src="./src/images/sause_tomato.svg"
+                    alt="sauce"
+                  />
+                </li>
+                <li class="m-1">paradicsom</li>
+                <li class="m-1">sonka</li>
+                <li class="m-1">mozzarella</li>
+                <li class="m-1">parmezán</li>
+              </ul>
+            </div>
+            <div
+              class="pizza-list__element__last d-md-flex d-block text-center"
+            >
+              <div class="orderbox">
+                <div class="pricebox d-flex justify-content-center">
+                  1190 Ft
+                </div>
+              </div>
+              <img
+                class="pizza-icon"
+                src="./src/images/Pizza_001.svg"
+                alt="pizza logo"
+              />
+            </div>
+          </div>
+
+          <div
+            class="pizza-list__element d-flex justify-content-between m-4 p-1"
+          >
+            <div class="pizza-list__element__first">
+              <div
+                class="pizza-list__element-namespace my-2 d-flex justify-content-center align-items-center"
+              >
+                <h3 class="pizza-list__element-heading">Pomodoro</h3>
+                <img
+                  class="chili-rate d-none"
+                  src="./src/images/chili_spicy.svg"
+                  alt="chili rate: HOT!"
+                  title="Chili rate: HOT!"
+                />
+              </div>
+              <ul
+                class="pizza-list__element__toppings d-md-flex d-block flex-wrap"
+              >
+                <li
+                  class="d-flex justify-content-center mb-sm-3 m-md-1 p-0 bg-transparent"
+                >
+                  <img
+                    class="sauce-icon"
+                    src="./src/images/sause_tomato.svg"
+                    alt="sauce"
+                  />
+                </li>
+                <li class="m-1">paradicsom</li>
+                <li class="m-1">sonka</li>
+                <li class="m-1">mozzarella</li>
+                <li class="m-1">parmezán</li>
+                <li class="m-1">gomba</li>
+              </ul>
+            </div>
+            <div
+              class="pizza-list__element__last d-md-flex d-block text-center"
+            >
+              <div class="orderbox">
+                <div class="pricebox d-flex justify-content-center">
+                  1290 Ft
+                </div>
+              </div>
+              <img
+                class="pizza-icon"
+                src="./src/images/Pizza_002.svg"
+                alt="pizza logo"
+              />
+            </div>
+          </div>
+
+          <div
+            class="pizza-list__element d-flex justify-content-between m-4 p-1"
+          >
+            <div class="pizza-list__element__first">
+              <div
+                class="pizza-list__element-namespace my-2 d-flex justify-content-center align-items-center"
+              >
+                <h3 class="pizza-list__element-heading">Pomodoro</h3>
+                <img
+                  class="chili-rate"
+                  src="./src/images/chili_mild.svg"
+                  alt="chili rate: Mild!"
+                  title="Chili rate: Mild!"
+                />
+              </div>
+              <ul
+                class="pizza-list__element__toppings d-md-flex d-block flex-wrap"
+              >
+                <li
+                  class="d-flex justify-content-center mb-sm-3 m-md-1 p-0 bg-transparent"
+                >
+                  <img
+                    class="sauce-icon"
+                    src="./src/images/sause_sourecrema.svg"
+                    alt="sauce"
+                  />
+                </li>
+                <li class="m-1">paradicsom</li>
+                <li class="m-1">sonka</li>
+                <li class="m-1">mozzarella</li>
+              </ul>
+            </div>
+            <div
+              class="pizza-list__element__last d-md-flex d-block text-center"
+            >
+              <div class="orderbox">
+                <div class="pricebox d-flex justify-content-center">
+                  1490 Ft
+                </div>
+              </div>
+              <img
+                class="pizza-icon"
+                src="./src/images/Pizza_003.svg"
+                alt="pizza logo"
+              />
+            </div>
+          </div>
+
+          <div
+            class="pizza-list__element d-flex justify-content-between m-4 p-1"
+          >
+            <div class="pizza-list__element__first">
+              <div
+                class="pizza-list__element-namespace my-2 d-flex justify-content-center align-items-center"
+              >
+                <h3 class="pizza-list__element-heading">Pomodoro</h3>
+                <img
+                  class="chili-rate"
+                  src="./src/images/chili_spicy.svg"
+                  alt="chili rate: Spicy!"
+                  title="Chili rate: Spicy!"
+                />
+              </div>
+              <ul
+                class="pizza-list__element__toppings d-md-flex d-block flex-wrap"
+              >
+                <li
+                  class="d-flex justify-content-center mb-sm-3 m-md-1 p-0 bg-transparent"
+                >
+                  <img
+                    class="sauce-icon"
+                    src="./src/images/sause_bbq.svg"
+                    alt="sauce"
+                  />
+                </li>
+                <li class="m-1">paradicsom</li>
+                <li class="m-1">sonka</li>
+                <li class="m-1">mozzarella</li>
+                <li class="m-1">parmezán</li>
+                <li class="m-1">parmezán</li>
+                <li class="m-1">parmezán</li>
+                <li class="m-1">parmezán</li>
+              </ul>
+            </div>
+            <div
+              class="pizza-list__element__last d-md-flex d-block text-center"
+            >
+              <div class="orderbox">
+                <div class="pricebox d-flex justify-content-center">
+                  1090 Ft
+                </div>
+              </div>
+              <img
+                class="pizza-icon"
+                src="./src/images/Pizza_004.svg"
+                alt="pizza logo"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://unpkg.com/react@16.7.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@16.7.0/umd/react-dom.development.js"></script>
+    <script src="./app.js"></script>
+  </body>
+</html>

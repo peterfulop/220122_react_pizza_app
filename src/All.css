@@ -10,6 +10,8 @@
 }
 
 body {
+  display: flex;
+  justify-content: center;
   background-color: rgb(32, 32, 32);
 }
 
@@ -20,21 +22,38 @@ ul {
   padding: 0;
 }
 
+#app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
 .App {
   background-color: rgba(124, 124, 124, 0.671);
   border-radius: 1rem;
   background-image: var(--pizzaContainerBG);
   background-repeat: repeat;
   background-size: cover;
-  margin: 2rem 0;
-  padding: 1rem 0;
 }
 
-.App h2 {
-  font-family: "Mochiy Pop P One", sans-serif;
-  color: rgb(255, 255, 255);
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+.navbar__menu li {
+  list-style: none;
+}
+
+.navbar__menu li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: black;
+  background: lightgray;
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+.navbar__menu li a:hover {
+  cursor: pointer;
+  background: tomato;
+  color: white;
 }
 
 .pizza-container__header {
@@ -47,6 +66,13 @@ ul {
   background-position: center;
   background-size: auto;
   margin-top: 1rem;
+}
+
+.App h2 {
+  font-family: "Mochiy Pop P One", sans-serif;
+  color: rgb(255, 255, 255);
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
 
 .pizza-list__element {
@@ -73,12 +99,12 @@ ul {
 }
 
 .pizza-list__element__first {
-  /* display: flex;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
   text-align: left;
-  padding-left: 1rem; */
+  padding-left: 1rem;
 }
 
 .pizza-list__element__toppings {
