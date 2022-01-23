@@ -7,6 +7,13 @@ import AmountButton from "./AmountButton";
 import "./PizzaListElement.css";
 
 const PizzaListElement = ({ pizza }) => {
+  // const [name, setName] = useState(pizza.name);
+
+  // const clickHander = () => {
+  //   console.log("Hello from State!");
+  //   setName("Hello!");
+  // };
+
   return (
     <div className="pizza-list__element justify-content-between d-block d-sm-flex m-4 p-1">
       <div className="d-flex ms-0 m-sm-3 flex-column justify-content-top   align-items-center align-items-sm-start">
@@ -25,7 +32,7 @@ const PizzaListElement = ({ pizza }) => {
           </div>
           <div className="buttonbox d-flex flex-column justify-content-center align-items-center mx-3">
             <OrderButton id={pizza.name} />
-            <AmountButton />
+            <AmountButton class="d-none" />
           </div>
         </div>
         <PizzaImage image={pizza.image} />

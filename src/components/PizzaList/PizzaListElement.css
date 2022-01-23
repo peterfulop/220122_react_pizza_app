@@ -36,3 +36,7 @@
 .sauce-icon {
   width: 30px;
 }
+
+button > * {
+  pointer-events: none;
+}
