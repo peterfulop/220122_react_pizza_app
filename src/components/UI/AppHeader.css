@@ -1,0 +1,11 @@
+.pizza-container__header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-image: var(--pageHeaderBG);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  margin: 0 1rem;
+}

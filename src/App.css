@@ -7,6 +7,7 @@
   --pageHeaderBG: url("./img/brush01.svg");
   --pizzaContainerBG: url("./img/bg.jpg");
   --priceBoxBG: url("./img/brush02.svg");
+  --pizzaTitle: #f39200;
 }
 
 body {
@@ -18,6 +19,38 @@ h3,
 ul {
   margin: 0;
   padding: 0;
+}
+
+.bg-orange {
+  background-color: var(--pizzaTitle);
+  border-color: var(--pizzaTitle);
+  font-weight: bold;
+}
+
+.btn-orange {
+  color: white;
+  background-color: var(--pizzaTitle);
+  border-color: var(--pizzaTitle);
+}
+
+.btn-outline-orange {
+  color: var(--pizzaTitle);
+  border-color: var(--pizzaTitle);
+}
+
+.btn-orange:hover,
+.btn-outline-orange:hover {
+  color: white;
+  background-color: #f59d18;
+  border-color: var(--pizzaTitle);
+}
+
+.btn-orange:focus,
+.btn-outline-orange:focus {
+  color: white;
+  background-color: var(--pizzaTitle);
+  border-color: #f59d18;
+  box-shadow: 0 0 0 0.25rem rgb(217 164 6 / 50%);
 }
 
 .App {
@@ -34,105 +67,7 @@ ul {
   font-family: "Mochiy Pop P One", sans-serif;
   color: rgb(255, 255, 255);
   margin-top: 1rem;
-  margin-bottom: 2rem;
-}
-
-.pizza-container__header {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  background-image: var(--pageHeaderBG);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto;
-  margin-top: 1rem;
-}
-
-.pizza-list__element {
-  background-color: #444343ef;
-  padding-left: 10px;
-  border-radius: 1rem;
-}
-.pizza-list__element:hover {
-  cursor: pointer;
-  background-color: #505050ed;
-}
-
-.chili-rate {
-  width: 40px;
-  margin: 0 1rem;
-}
-
-.pizza-list__element-heading {
-  color: #f39200;
-  font-family: "Mochiy Pop P One", sans-serif;
-}
-.sauce-icon {
-  width: 30px;
-}
-
-.pizza-list__element__first {
-  /* display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  text-align: left;
-  padding-left: 1rem; */
-}
-
-.pizza-list__element__toppings {
-  display: flex;
-  padding-left: 0;
-  margin: 0.5rem 0;
-}
-.pizza-list__element__toppings li {
-  font-family: "Quicksand", sans-serif;
-  display: flex;
-  align-items: center;
-  list-style: none;
-  background-color: #2f2f2f;
-  color: white;
-  font-size: 15px;
-  padding: 5px 20px;
-  border-radius: 15px;
-  text-transform: capitalize;
-}
-
-.pizza-list__element__last {
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-  align-items: center;
-}
-
-.pricebox {
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  text-align: left;
-  font-family: "Mochiy Pop P One", sans-serif;
-  background-image: var(--priceBoxBG);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: auto;
-  width: 180px;
-  height: 80px;
-  padding-right: 3rem;
-  font-size: 16px;
-  color: white;
-}
-
-.orderbox {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-}
-
-.amountbox .input-group {
-  width: 150px;
-  height: 30px;
+  margin-bottom: 1.5rem;
 }
 
 .amountbox .input-group button {
@@ -149,9 +84,6 @@ ul {
   border: 1px solid gray;
 }
 
-.pizza-icon {
-  width: 100px;
-}
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {

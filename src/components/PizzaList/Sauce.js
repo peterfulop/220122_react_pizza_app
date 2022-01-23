@@ -1,4 +1,6 @@
-const SauceIcon = (props) => {
+import React from "react";
+
+const Sauce = (props) => {
   return (
     <img
       className="sauce-icon"
@@ -8,4 +10,4 @@ const SauceIcon = (props) => {
   );
 };
 
-export default SauceIcon;
+export default Sauce;

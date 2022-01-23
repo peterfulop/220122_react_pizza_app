@@ -1,0 +1,38 @@
+.pizza-list__element {
+  background-color: #444343ef;
+  padding-left: 10px;
+  border-radius: 1rem;
+}
+.pizza-list__element:hover {
+  background-color: #505050ed;
+}
+
+.pizza-list__element-heading {
+  color: var(--pizzaTitle);
+  font-family: "Mochiy Pop P One", sans-serif;
+}
+
+.pricebox {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  text-align: left;
+  font-family: "Mochiy Pop P One", sans-serif;
+  background-image: var(--priceBoxBG);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  width: 150px;
+  height: 80px;
+  padding-right: 3rem;
+  font-size: 16px;
+  color: white;
+}
+
+.chili-rate {
+  width: 40px;
+}
+
+.sauce-icon {
+  width: 30px;
+}

@@ -1,3 +1,6 @@
+import React from "react";
+import "./AppHeader.css";
+
 const AppHeader = (props) => {
   return (
     <div className="pizza-container__header">
