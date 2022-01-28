@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ChiliRate from "./ChiliRate";
 import PizzaImage from "./PizzaImage";
 import Toppings from "./Toppings";
@@ -7,12 +7,53 @@ import AmountButton from "./AmountButton";
 import "./PizzaListElement.css";
 
 const PizzaListElement = ({ pizza }) => {
-  // const [name, setName] = useState(pizza.name);
+  const [amount, setAmount] = useState(0);
+  const [amountVisibility, setAmountVisibility] = useState(false);
 
-  // const clickHander = () => {
-  //   console.log("Hello from State!");
-  //   setName("Hello!");
-  // };
+  const [orders, setOrders] = useState([]);
+
+  const setUserOrders = (add) => {
+    if (add) {
+      setOrders([
+        ...orders,
+        { id: pizza.id, name: pizza.name, price: pizza.price },
+      ]);
+    } else {
+      setOrders(
+        orders.splice(
+          orders.findLastIndex((x) => x.id === pizza.id),
+          1
+        )
+      );
+    }
+  };
+
+  const orderOrDont = (order) => {
+    if (order) {
+      setAmount(1);
+      setUserOrders(order);
+    } else {
+      setAmount(0);
+      setOrders(
+        orders.filter((x) => {
+          return x.id !== pizza.id;
+        })
+      );
+    }
+    setAmountVisibility(order);
+  };
+
+  const plusAmount = () => {
+    if (amount === 10) return;
+    setAmount(parseInt(amount) + 1);
+    setUserOrders(true);
+  };
+
+  const minusAmount = () => {
+    if (amount === 1) return;
+    setAmount(parseInt(amount) - 1);
+    setUserOrders(false);
+  };
 
   return (
     <div className="pizza-list__element justify-content-between d-block d-sm-flex m-4 p-1">
@@ -30,9 +71,20 @@ const PizzaListElement = ({ pizza }) => {
           <div className="pricebox d-flex justify-content-center ms-5">
             {pizza.price} Ft
           </div>
-          <div className="buttonbox d-flex flex-column justify-content-center align-items-center mx-3">
-            <OrderButton id={pizza.name} />
-            <AmountButton class="d-none" />
+          <div className="buttonbox d-flex flex-column justify-content-center align-items-center ms-3 me-3 mb-3">
+            <OrderButton
+              id={pizza.name}
+              orderOrDont={orderOrDont}
+              amountVisibility={amountVisibility}
+            />
+            <AmountButton
+              amount={amount}
+              setAmountHandler={setAmount}
+              plusAmountHandler={plusAmount}
+              minusAmountHandler={minusAmount}
+              orderOrDont={orderOrDont}
+              amountVisibility={!amountVisibility}
+            />
           </div>
         </div>
         <PizzaImage image={pizza.image} />
