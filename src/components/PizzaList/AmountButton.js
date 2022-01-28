@@ -23,44 +23,35 @@ const AmountButton = ({
   };
 
   return (
-    <div
-      className="amount-input-box"
-      hidden={amountVisibility}
-      style={{ width: "170px" }}
-    >
+    <div className="amount-input-box" hidden={amountVisibility}>
       <div className="input-group">
         <button
-          className="btn btn-orange d-flex justify-content-center align-items-center"
+          className="button-minus-amount btn btn-orange d-flex justify-content-center align-items-center"
           type="button"
-          id="button-minus-amount"
-          style={{ width: "40px" }}
           onClick={minusAmountHandler}
         >
           <FaMinus fontSize={12} />
         </button>
         <input
-          readOnly="true"
+          readOnly={true}
           type="number"
           min="1"
           max="10"
           value={amount}
           onChange={amountInputHander}
-          className="form-control btn btn-warning text-dark"
+          className="input-amount form-control btn btn-warning text-dark"
         />
         <button
-          className="btn btn-orange d-flex justify-content-center align-items-center"
+          className="button-plus-amount btn btn-orange d-flex justify-content-center align-items-center"
           type="button"
-          id="button-plus-amount"
-          style={{ width: "40px" }}
           onClick={plusAmountHandler}
         >
           <FaPlus fontSize={12} />
         </button>
       </div>
       <button
-        className="btn btn-sm btn-danger  justify-content-center align-items-center ms-2"
+        className="button-clear-amount btn btn-sm btn-danger justify-content-center align-items-center ms-2"
         type="button"
-        style={{ width: "40px" }}
         onClick={() => {
           orderOrDont(false);
         }}

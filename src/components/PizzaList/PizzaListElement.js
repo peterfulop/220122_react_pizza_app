@@ -6,26 +6,12 @@ import OrderButton from "./OrderButton";
 import AmountButton from "./AmountButton";
 import "./PizzaListElement.css";
 
-const PizzaListElement = ({ pizza }) => {
+const PizzaListElement = ({ pizza, onSetOrders }) => {
   const [amount, setAmount] = useState(0);
   const [amountVisibility, setAmountVisibility] = useState(false);
 
-  const [orders, setOrders] = useState([]);
-
   const setUserOrders = (add) => {
-    if (add) {
-      setOrders([
-        ...orders,
-        { id: pizza.id, name: pizza.name, price: pizza.price },
-      ]);
-    } else {
-      setOrders(
-        orders.splice(
-          orders.findLastIndex((x) => x.id === pizza.id),
-          1
-        )
-      );
-    }
+    onSetOrders(pizza.id, add);
   };
 
   const orderOrDont = (order) => {
@@ -34,11 +20,7 @@ const PizzaListElement = ({ pizza }) => {
       setUserOrders(order);
     } else {
       setAmount(0);
-      setOrders(
-        orders.filter((x) => {
-          return x.id !== pizza.id;
-        })
-      );
+      onSetOrders(pizza.id, false, true);
     }
     setAmountVisibility(order);
   };

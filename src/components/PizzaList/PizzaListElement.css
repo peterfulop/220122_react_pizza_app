@@ -43,4 +43,16 @@ button > * {
 
 .amount-input-box {
   display: flex;
+  width: 170px;
+}
+
+.button-plus-amount,
+.button-minus-amount,
+.button-clear-amount {
+  width: 40px;
+}
+
+.input-amount {
+  background-color: var(--bs-warning) !important;
+  font-weight: bold;
 }

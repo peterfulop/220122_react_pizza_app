@@ -102,12 +102,12 @@ const data = [
   },
 ];
 
-const chili = ["chili_mild.svg", "chili_spicy.svg", "chili_hot.svg"];
-const sauces = [
-  "sauce_tomato.svg",
-  "sauce_sourecrema.svg",
-  "sauce_cheese.svg",
-  "sauce_bbq.svg",
-];
+// const chili = ["chili_mild.svg", "chili_spicy.svg", "chili_hot.svg"];
+// const sauces = [
+//   "sauce_tomato.svg",
+//   "sauce_sourecrema.svg",
+//   "sauce_cheese.svg",
+//   "sauce_bbq.svg",
+// ];
 
 export default data;
