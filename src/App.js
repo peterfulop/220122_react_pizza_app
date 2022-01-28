@@ -12,10 +12,11 @@ const convertData = () => {
 };
 
 function App() {
+  console.log(data);
   return (
     <div className="App">
       <AppHeader header="React Pizza App" />
-      <PizzaList data={convertData()} />
+      <PizzaList data={data} />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 const data = [
   {
+    id: "49487848221665787",
     name: "Margherita",
     chiliRate: "",
     sauce: "sauce_tomato.svg",
@@ -8,6 +9,7 @@ const data = [
     price: 1190,
   },
   {
+    id: "3980483041685594",
     name: "Pancetta with dill",
     chiliRate: "chili_spicy.svg",
     sauce: "sauce_sourecrema.svg",
@@ -16,6 +18,7 @@ const data = [
     price: 1290,
   },
   {
+    id: "22027005404691113",
     name: "Mushroom",
     chiliRate: "",
     sauce: "sauce_tomato.svg",
@@ -29,6 +32,7 @@ const data = [
     price: 1290,
   },
   {
+    id: "508466586323403",
     name: "Sausage pizza",
     chiliRate: "chili_mild.svg",
     sauce: "sauce_tomato.svg",
@@ -43,6 +47,7 @@ const data = [
     price: 1390,
   },
   {
+    id: "2562923411992488",
     name: "Pepperoni or Chorizo",
     chiliRate: "",
     sauce: "sauce_tomato.svg",
@@ -51,6 +56,7 @@ const data = [
     price: 1390,
   },
   {
+    id: "6818177016638838",
     name: "Potato and rosemary",
     chiliRate: "chili_mild.svg",
     sauce: "sauce_sourecrema.svg",
@@ -64,6 +70,7 @@ const data = [
     price: 1290,
   },
   {
+    id: "596170123450352",
     name: "Pizza with Ricotta and Rosemary Pesto",
     chiliRate: "",
     sauce: "sauce_sourecrema.svg",
@@ -79,6 +86,7 @@ const data = [
     price: 1490,
   },
   {
+    id: "6944102681332258",
     name: "Pizza Pomodoro",
     chiliRate: "chili_hot.svg",
     sauce: "sauce_tomato.svg",
@@ -93,6 +101,7 @@ const data = [
     price: 1490,
   },
   {
+    id: "4304808710761556",
     name: "Prosciutto di Parma",
     chiliRate: "",
     sauce: "sauce_tomato.svg",
@@ -102,8 +111,8 @@ const data = [
   },
 ];
 
-// const chili = ["chili_mild.svg", "chili_spicy.svg", "chili_hot.svg"];
-// const sauces = [
+// const chili : ["chili_mild.svg", "chili_spicy.svg", "chili_hot.svg"];
+// const sauces : [
 //   "sauce_tomato.svg",
 //   "sauce_sourecrema.svg",
 //   "sauce_cheese.svg",
