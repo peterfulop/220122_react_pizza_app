@@ -2,11 +2,11 @@ import React from "react";
 import { FaTrashAlt, FaPlus, FaMinus } from "react-icons/fa";
 
 const AmountButton = ({
-  amountVisibility,
   amount,
+  amountVisibility,
   setAmountHandler,
-  plusAmountHandler,
-  minusAmountHandler,
+  onPlusAmount,
+  onMinusAmount,
   orderOrDont,
 }) => {
   const amountInputHander = (event) => {
@@ -28,7 +28,7 @@ const AmountButton = ({
         <button
           className="button-minus-amount btn btn-orange d-flex justify-content-center align-items-center"
           type="button"
-          onClick={minusAmountHandler}
+          onClick={onMinusAmount}
         >
           <FaMinus fontSize={12} />
         </button>
@@ -44,7 +44,7 @@ const AmountButton = ({
         <button
           className="button-plus-amount btn btn-orange d-flex justify-content-center align-items-center"
           type="button"
-          onClick={plusAmountHandler}
+          onClick={onPlusAmount}
         >
           <FaPlus fontSize={12} />
         </button>

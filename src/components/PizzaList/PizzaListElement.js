@@ -6,32 +6,34 @@ import OrderButton from "./OrderButton";
 import AmountButton from "./AmountButton";
 import "./PizzaListElement.css";
 
-const PizzaListElement = ({ pizza, onSetOrders }) => {
+const PizzaListElement = ({ pizza, onSetOrder, onUpdateOrder }) => {
   const [amount, setAmount] = useState(0);
   const [amountVisibility, setAmountVisibility] = useState(false);
 
   const setUserOrders = (add) => {
-    onSetOrders(pizza.id, add);
+    onSetOrder(pizza.id, add, false, amount);
   };
 
   const orderOrDont = (order) => {
     if (order) {
       setAmount(1);
       setUserOrders(order);
+      // onUpdateOrder();
     } else {
       setAmount(0);
-      onSetOrders(pizza.id, false, true);
+      onSetOrder(pizza.id, false, true);
+      // onUpdateOrder();
     }
     setAmountVisibility(order);
   };
 
-  const plusAmount = () => {
+  const plusAmountHandler = () => {
     if (amount === 10) return;
     setAmount(parseInt(amount) + 1);
     setUserOrders(true);
   };
 
-  const minusAmount = () => {
+  const minusAmountHandler = () => {
     if (amount === 1) return;
     setAmount(parseInt(amount) - 1);
     setUserOrders(false);
@@ -62,8 +64,8 @@ const PizzaListElement = ({ pizza, onSetOrders }) => {
             <AmountButton
               amount={amount}
               setAmountHandler={setAmount}
-              plusAmountHandler={plusAmount}
-              minusAmountHandler={minusAmount}
+              onPlusAmount={plusAmountHandler}
+              onMinusAmount={minusAmountHandler}
               orderOrDont={orderOrDont}
               amountVisibility={!amountVisibility}
             />

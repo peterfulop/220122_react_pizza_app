@@ -1,5 +1,6 @@
 import React from "react";
 const OrderButton = ({ id, orderOrDont, amountVisibility }) => {
+  console.log("render OrderBtn");
   return (
     <button
       hidden={amountVisibility}
