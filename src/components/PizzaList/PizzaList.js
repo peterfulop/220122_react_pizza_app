@@ -1,7 +1,7 @@
 import React from "react";
 import PizzaListElement from "./PizzaListElement";
 
-const PizzaList = ({ data, onSetOrder, onUpdateOrder }) => {
+const PizzaList = ({ data, onUpdateOrder }) => {
   return (
     <div className="pizza-list">
       {data.map((x) => {
@@ -9,7 +9,6 @@ const PizzaList = ({ data, onSetOrder, onUpdateOrder }) => {
           <PizzaListElement
             pizza={x}
             key={x.id}
-            onSetOrder={onSetOrder}
             onUpdateOrder={onUpdateOrder}
           />
         );

@@ -1,50 +1,45 @@
 import React from "react";
 import { FaTrashAlt, FaPlus, FaMinus } from "react-icons/fa";
 
-const AmountButton = ({
-  amount,
-  amountVisibility,
-  setAmountHandler,
-  onPlusAmount,
-  onMinusAmount,
-  orderOrDont,
-}) => {
+const AmountButton = (props) => {
   const amountInputHander = (event) => {
     const input = parseInt(event.target.value);
-    if (input <= 0) {
-      setAmountHandler(1);
+    if (input <= 0 || isNaN(input)) {
+      props.setAmount(1);
+      props.onUpdateOrder(1);
       return;
     }
     if (input > 10) {
-      setAmountHandler(10);
+      props.setAmount(10);
+      props.onUpdateOrder(10);
       return;
     }
-    setAmountHandler(input);
+    props.setAmount(input);
+    props.onUpdateOrder(input);
   };
 
   return (
-    <div className="amount-input-box" hidden={amountVisibility}>
+    <div className="amount-input-box">
       <div className="input-group">
         <button
           className="button-minus-amount btn btn-orange d-flex justify-content-center align-items-center"
           type="button"
-          onClick={onMinusAmount}
+          onClick={props.onMinusAmount}
         >
           <FaMinus fontSize={12} />
         </button>
         <input
-          readOnly={true}
           type="number"
           min="1"
           max="10"
-          value={amount}
+          value={props.amount}
           onChange={amountInputHander}
           className="input-amount form-control btn btn-warning text-dark"
         />
         <button
           className="button-plus-amount btn btn-orange d-flex justify-content-center align-items-center"
           type="button"
-          onClick={onPlusAmount}
+          onClick={props.onPlusAmount}
         >
           <FaPlus fontSize={12} />
         </button>
@@ -52,9 +47,7 @@ const AmountButton = ({
       <button
         className="button-clear-amount btn btn-sm btn-danger justify-content-center align-items-center ms-2"
         type="button"
-        onClick={() => {
-          orderOrDont(false);
-        }}
+        onClick={props.onDeleteAll}
       >
         <FaTrashAlt fontSize={16} />
       </button>

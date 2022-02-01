@@ -47,10 +47,14 @@ function App() {
     orderCountHandler();
   };
 
+  const testMethod = (inputValue) => {
+    console.log(inputValue);
+  };
+
   return (
     <div className="App">
       <AppHeader header="React Pizza App" orderCount={orderCount} />
-      <PizzaList data={data} onSetOrder={setOrderHandler} />
+      <PizzaList data={data} onUpdateOrder={testMethod} />
     </div>
   );
 }

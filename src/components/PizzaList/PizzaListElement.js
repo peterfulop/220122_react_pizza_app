@@ -1,44 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import ChiliRate from "./ChiliRate";
 import PizzaImage from "./PizzaImage";
 import Toppings from "./Toppings";
-import OrderButton from "./OrderButton";
-import AmountButton from "./AmountButton";
 import "./PizzaListElement.css";
+import AddToBasket from "./AddToBasket";
 
-const PizzaListElement = ({ pizza, onSetOrder, onUpdateOrder }) => {
-  const [amount, setAmount] = useState(0);
-  const [amountVisibility, setAmountVisibility] = useState(false);
-
-  const setUserOrders = (add) => {
-    onSetOrder(pizza.id, add, false, amount);
-  };
-
-  const orderOrDont = (order) => {
-    if (order) {
-      setAmount(1);
-      setUserOrders(order);
-      // onUpdateOrder();
-    } else {
-      setAmount(0);
-      onSetOrder(pizza.id, false, true);
-      // onUpdateOrder();
-    }
-    setAmountVisibility(order);
-  };
-
-  const plusAmountHandler = () => {
-    if (amount === 10) return;
-    setAmount(parseInt(amount) + 1);
-    setUserOrders(true);
-  };
-
-  const minusAmountHandler = () => {
-    if (amount === 1) return;
-    setAmount(parseInt(amount) - 1);
-    setUserOrders(false);
-  };
-
+const PizzaListElement = ({ pizza, onUpdateOrder }) => {
   return (
     <div className="pizza-list__element justify-content-between d-block d-sm-flex m-4 p-1">
       <div className="d-flex ms-0 m-sm-3 flex-column justify-content-top   align-items-center align-items-sm-start">
@@ -55,21 +22,7 @@ const PizzaListElement = ({ pizza, onSetOrder, onUpdateOrder }) => {
           <div className="pricebox d-flex justify-content-center ms-5">
             {pizza.price} Ft
           </div>
-          <div className="buttonbox d-flex flex-column justify-content-center align-items-center ms-3 me-3 mb-3">
-            <OrderButton
-              id={pizza.name}
-              orderOrDont={orderOrDont}
-              amountVisibility={amountVisibility}
-            />
-            <AmountButton
-              amount={amount}
-              setAmountHandler={setAmount}
-              onPlusAmount={plusAmountHandler}
-              onMinusAmount={minusAmountHandler}
-              orderOrDont={orderOrDont}
-              amountVisibility={!amountVisibility}
-            />
-          </div>
+          <AddToBasket pizza={pizza} />
         </div>
         <PizzaImage image={pizza.image} />
       </div>
