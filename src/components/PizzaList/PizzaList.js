@@ -1,15 +1,15 @@
 import React from "react";
 import PizzaListElement from "./PizzaListElement";
 
-const PizzaList = ({ data, onUpdateOrder }) => {
+const PizzaList = ({ pizzaList, setOrderHandler }) => {
   return (
     <div className="pizza-list">
-      {data.map((x) => {
+      {pizzaList.map((x) => {
         return (
           <PizzaListElement
             pizza={x}
             key={x.id}
-            onUpdateOrder={onUpdateOrder}
+            setOrderHandler={setOrderHandler}
           />
         );
       })}

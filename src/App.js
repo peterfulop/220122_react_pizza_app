@@ -6,29 +6,33 @@ import data from "./data/data.js";
 import "./App.css";
 
 function App() {
+  const [pizzas, setPizzas] = useState(data);
   const [orders, setOrders] = useState([]);
-  const [orderCount, setOrderCount] = useState(0);
 
-  const orderCountHandler = () => {
-    let sum = 0;
-    orders.forEach((x) => (sum += x.quantity));
-    setOrderCount(sum);
-  };
+  const setOrderHandler = (
+    pizzaId,
+    addOrder,
+    clearAllById = false,
+    amount = 0
+  ) => {
+    let am = amount > 0 ? amount : 1;
 
-  const setOrderHandler = (pizzaId, addOrder, clearAllById = false) => {
     if (clearAllById) {
-      console.log("clear all byId");
       setOrders(orders.filter((o) => o.id !== pizzaId));
       return;
     }
     if (addOrder) {
       var exists = orders.find((x) => x.id === pizzaId);
       if (exists) {
-        let letezo = orders.find((x) => x.id === pizzaId);
-        letezo.quantity += 1;
+        let selected = orders.find((x) => x.id === pizzaId);
+        if (amount > 0) {
+          selected.quantity = amount;
+        } else {
+          selected.quantity += 1;
+        }
         setOrders([...orders]);
       } else {
-        let selectedItem = data.find((p) => p.id === pizzaId);
+        let selectedItem = pizzas.find((p) => p.id === pizzaId);
         let newOrder = {
           id: selectedItem.id,
           name: selectedItem.name,
@@ -39,22 +43,21 @@ function App() {
         setOrders([...orders, newOrder]);
       }
     } else {
-      let letezo = orders.find((x) => x.id === pizzaId);
-      letezo.quantity -= 1;
+      let selected = orders.find((x) => x.id === pizzaId);
+
+      if (amount > 0) {
+        selected.quantity = amount;
+      } else {
+        selected.quantity -= 1;
+      }
       setOrders([...orders]);
     }
-
-    orderCountHandler();
-  };
-
-  const testMethod = (inputValue) => {
-    console.log(inputValue);
   };
 
   return (
     <div className="App">
-      <AppHeader header="React Pizza App" orderCount={orderCount} />
-      <PizzaList data={data} onUpdateOrder={testMethod} />
+      <AppHeader orders={orders} />
+      <PizzaList pizzaList={pizzas} setOrderHandler={setOrderHandler} />
     </div>
   );
 }

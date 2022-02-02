@@ -1,54 +1,14 @@
 import React, { useState } from "react";
 import AmountButton from "./AmountButton";
 
-const AddToBasket = (props) => {
+const AddToBasket = ({ pizza, setOrderHandler }) => {
   const [amount, setAmount] = useState(1);
   const [editAmount, startEditAmount] = useState(false);
-
-  const [orders, setOrders] = useState([]);
-  const [orderCount, setOrderCount] = useState(0);
-
-  const orderCountHandler = () => {
-    let sum = 0;
-    orders.forEach((x) => (sum += x.quantity));
-    setOrderCount(sum);
-  };
-
-  const setOrderHandler = (pizzaId, addOrder, clearAllById = false) => {
-    if (clearAllById) {
-      setOrders(orders.filter((o) => o.id !== pizzaId));
-      return;
-    }
-    if (addOrder) {
-      var exists = orders.find((x) => x.id === pizzaId);
-      if (exists) {
-        let letezo = orders.find((x) => x.id === pizzaId);
-        letezo.quantity += 1;
-        setOrders([...orders]);
-      } else {
-        let selectedItem = props.pizza;
-        let newOrder = {
-          id: selectedItem.id,
-          name: selectedItem.name,
-          price: selectedItem.price,
-          image: selectedItem.image,
-          quantity: 1,
-        };
-        setOrders([...orders, newOrder]);
-      }
-    } else {
-      let letezo = orders.find((x) => x.id === pizzaId);
-      letezo.quantity -= 1;
-      setOrders([...orders]);
-    }
-
-    orderCountHandler();
-  };
 
   const plusAmountHandler = () => {
     if (amount === 10) return;
     setAmount((prevAmount) => {
-      setOrderHandler(props.pizza.id, true);
+      setOrderHandler(pizza.id, true);
       return prevAmount + 1;
     });
   };
@@ -56,21 +16,25 @@ const AddToBasket = (props) => {
   const minusAmountHandler = () => {
     if (amount === 1) return;
     setAmount((prevAmount) => {
-      setOrderHandler(props.pizza.id, false);
+      setOrderHandler(pizza.id, false);
       return prevAmount - 1;
     });
   };
 
   const startEditAmountHandler = () => {
     setAmount(1);
-    setOrderHandler(props.pizza.id, true);
     startEditAmount(true);
+    setOrderHandler(pizza.id, true);
   };
 
   const stopEditAmountHandler = () => {
     setAmount(0);
-    setOrderHandler(props.pizza.id, false, true);
     startEditAmount(false);
+    setOrderHandler(pizza.id, false, true);
+  };
+
+  const onUpdateAmount = (amount) => {
+    setOrderHandler(pizza.id, true, false, amount);
   };
 
   return (
@@ -78,12 +42,11 @@ const AddToBasket = (props) => {
       {editAmount ? (
         <AmountButton
           onDeleteAll={stopEditAmountHandler}
-          onUpdateOrder={props.onUpdateOrder}
           onPlusAmount={plusAmountHandler}
           onMinusAmount={minusAmountHandler}
           amount={amount}
           setAmount={setAmount}
-          test={setOrderHandler}
+          onUpdateAmount={onUpdateAmount}
         />
       ) : (
         <button

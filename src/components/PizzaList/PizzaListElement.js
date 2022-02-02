@@ -5,7 +5,7 @@ import Toppings from "./Toppings";
 import "./PizzaListElement.css";
 import AddToBasket from "./AddToBasket";
 
-const PizzaListElement = ({ pizza, onUpdateOrder }) => {
+const PizzaListElement = ({ pizza, setOrderHandler }) => {
   return (
     <div className="pizza-list__element justify-content-between d-block d-sm-flex m-4 p-1">
       <div className="d-flex ms-0 m-sm-3 flex-column justify-content-top   align-items-center align-items-sm-start">
@@ -13,7 +13,7 @@ const PizzaListElement = ({ pizza, onUpdateOrder }) => {
           <h3 className="pizza-list__element-heading text-center text-sm-start mb-1 mb-sm-0">
             {pizza.name}
           </h3>
-          {pizza.chiliRate ? <ChiliRate rate={pizza.chiliRate} /> : ""}
+          {pizza.chiliRate && <ChiliRate rate={pizza.chiliRate} />}
         </div>
         <Toppings toppings={pizza.toppings} sauce={pizza.sauce} />
       </div>
@@ -22,7 +22,7 @@ const PizzaListElement = ({ pizza, onUpdateOrder }) => {
           <div className="pricebox d-flex justify-content-center ms-5">
             {pizza.price} Ft
           </div>
-          <AddToBasket pizza={pizza} />
+          <AddToBasket pizza={pizza} setOrderHandler={setOrderHandler} />
         </div>
         <PizzaImage image={pizza.image} />
       </div>

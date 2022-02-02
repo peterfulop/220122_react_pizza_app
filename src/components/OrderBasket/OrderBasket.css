@@ -1,11 +1,19 @@
 .order-basket {
   display: flex;
   justify-content: flex-end;
+  transition: 0.5s;
+}
+
+.order-basket:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: 0.5s;
 }
 
 .pizza-box {
   width: 50px;
   height: 50px;
+  z-index: 10;
 }
 
 .pizza-basket-count {
@@ -22,4 +30,6 @@
   height: 40px;
   border-radius: 50%;
   margin-top: -20px;
+  z-index: 20;
+  cursor: pointer;
 }
