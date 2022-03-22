@@ -1,0 +1,9 @@
+.amount-form {
+  display: flex;
+  justify-content: flex-start;
+  margin: 0.25rem 0;
+}
+
+.amount-input {
+  width: 50px !important;
+}
