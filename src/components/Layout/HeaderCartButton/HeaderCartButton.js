@@ -3,7 +3,7 @@ import CartContext from "../../../store/cart-context";
 import logo from "../../../img/pizza_box.svg";
 import styles from "./HeaderCartButton.module.css";
 
-const OrderBasket = () => {
+const OrderBasket = (props) => {
   const cartCtx = useContext(CartContext);
 
   let numberOfCartItems = cartCtx.items.reduce((curNumber, item) => {
@@ -15,7 +15,7 @@ const OrderBasket = () => {
   );
 
   return (
-    <button className={styles["order-basket"]}>
+    <button onClick={props.onClick} className={styles["order-basket"]}>
       <div className="d-flex flex-column align-items-center mx-4">
         <img className={styles["pizza-box"]} src={logo} alt="basket-icon" />
         {orderCounterBox}
