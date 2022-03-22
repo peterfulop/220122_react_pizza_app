@@ -12,6 +12,8 @@
 
 body {
   background-color: rgb(32, 32, 32);
+  display: flex;
+  justify-content: center;
 }
 
 p,
@@ -53,24 +55,28 @@ ul {
   box-shadow: 0 0 0 0.25rem rgb(217 164 6 / 50%);
 }
 
-.App {
+.app-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1200px;
   background-color: rgba(124, 124, 124, 0.671);
   border-radius: 1rem;
   background-image: var(--pizzaContainerBG);
   background-repeat: repeat;
   background-size: cover;
-  margin: 2rem 0;
+  margin: 2rem;
   padding: 1rem 0;
 }
 
-.App h2 {
+.app-container h2 {
   font-family: "Mochiy Pop P One", sans-serif;
   color: rgb(255, 255, 255);
   margin-top: 1rem;
   margin-bottom: 1.5rem;
 }
 
-.amountbox .input-group button {
+/* .amountbox .input-group button {
   text-align: center;
   width: 40px;
   font-size: 18px;
@@ -82,7 +88,7 @@ ul {
   font-weight: bold;
   text-align: center;
   border: 1px solid gray;
-}
+} */
 
 /* Chrome, Safari, Edge, Opera */
 input::-webkit-outer-spin-button,

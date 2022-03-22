@@ -28,7 +28,7 @@ const AmountButton = ({
   };
 
   return (
-    <div className="amount-input-box">
+    <form className="amount-input-box">
       <div className="input-group">
         <button
           className="button-minus-amount btn btn-orange d-flex justify-content-center align-items-center"
@@ -60,7 +60,7 @@ const AmountButton = ({
       >
         <FaTrashAlt fontSize={16} />
       </button>
-    </div>
+    </form>
   );
 };
 

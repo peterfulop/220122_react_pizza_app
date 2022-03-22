@@ -1,6 +1,5 @@
 import React from "react";
 const OrderButton = ({ orderOrDont, amountVisibility }) => {
-  console.log("render OrderBtn");
   return (
     <div className="buttonbox d-flex flex-column justify-content-center align-items-center ms-3 me-3 mb-3">
       <button

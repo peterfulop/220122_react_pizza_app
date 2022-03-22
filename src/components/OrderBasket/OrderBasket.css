@@ -17,10 +17,9 @@
 }
 
 .pizza-basket-count {
-  border: none;
-  background-color: transparent;
-  resize: none;
-  outline: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background: white;
   color: crimson;
   font-weight: bold;
@@ -31,5 +30,4 @@
   border-radius: 50%;
   margin-top: -20px;
   z-index: 20;
-  cursor: pointer;
 }
