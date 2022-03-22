@@ -1,0 +1,72 @@
+/*  justify-content-between d-block d-sm-flex m-4 p-1 */
+.pizza-list-element {
+  display: block;
+  justify-content: space-between;
+  background-color: #444343ef;
+  padding-left: 10px;
+  border-radius: 1rem;
+}
+.pizza-list-element:hover {
+  background-color: #505050ed;
+}
+
+/* //text-center text-sm-start mb-1 mb-sm-0 */
+.pizza-list-element h3 {
+  color: var(--pizzaTitle);
+  font-family: "Mochiy Pop P One", sans-serif;
+  text-align: center;
+  margin-bottom: 1;
+}
+
+.pricebox {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  text-align: left;
+  font-family: "Mochiy Pop P One", sans-serif;
+  background-image: var(--priceBoxBG);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: auto;
+  width: 150px;
+  height: 80px;
+  padding-right: 3rem;
+  font-size: 16px;
+  color: white;
+}
+
+button > * {
+  pointer-events: none;
+}
+
+.input-amount {
+  background-color: var(--bs-warning) !important;
+  font-weight: bold;
+}
+
+.right-area {
+  justify-content: center;
+  flex-grow: inherit;
+  margin: 0 2rem;
+  text-align: center;
+}
+
+/* // X-Small devices (portrait phones, less than 576px) */
+@media (max-width: 575.98px) {
+}
+
+/* // Small devices (landscape phones, less than 768px) */
+@media (max-width: 767.98px) {
+}
+
+/* // Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+}
+
+/* // Large devices (desktops, less than 1200px) */
+@media (max-width: 1199.98px) {
+}
+
+/* // X-Large devices (large desktops, less than 1400px) */
+@media (max-width: 1399.98px) {
+}

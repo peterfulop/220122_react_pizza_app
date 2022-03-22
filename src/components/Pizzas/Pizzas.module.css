@@ -1,0 +1,5 @@
+main {
+  background-image: var(--pizzaContainerBG);
+  background-repeat: repeat;
+  background-size: cover;
+}

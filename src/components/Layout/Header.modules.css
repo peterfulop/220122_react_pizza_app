@@ -1,0 +1,23 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  background-color: rgba(46, 46, 46, 0.938);
+  position: sticky;
+  top: 0;
+}
+
+header h2 {
+  padding: 1rem;
+  color: #f39200;
+  font-family: "Mochiy Pop P One", sans-serif;
+  margin: 1rem;
+}
+
+@media (max-width: 575px) {
+  header h2 {
+    font-size: 1.25rem;
+  }
+}

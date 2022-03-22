@@ -1,6 +1,8 @@
 .order-basket {
   display: flex;
   justify-content: flex-end;
+  border: none;
+  background: none;
   transition: 0.5s;
 }
 

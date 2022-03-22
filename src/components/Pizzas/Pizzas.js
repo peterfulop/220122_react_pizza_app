@@ -3,15 +3,9 @@ import PizzaListElement from "./PizzaListElement";
 
 const PizzaList = (props) => {
   return (
-    <section className="pizza-list">
+    <section>
       {props.pizzaList.map((pizza) => {
-        return (
-          <PizzaListElement
-            pizza={pizza}
-            key={pizza.id}
-            // setOrderHandler={props.setOrderHandler}
-          />
-        );
+        return <PizzaListElement pizza={pizza} key={pizza.id} />;
       })}
     </section>
   );

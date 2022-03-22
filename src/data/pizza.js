@@ -1,4 +1,4 @@
-const data = [
+export const pizzas = [
   {
     id: "49487848221665787",
     name: "Margherita",
@@ -11,7 +11,7 @@ const data = [
   {
     id: "3980483041685594",
     name: "Pancetta with dill",
-    chiliRate: "chili_spicy.svg",
+    chiliRate: 3,
     sauce: "sauce_sourecrema.svg",
     toppings: ["fontina cheese", "sliced pancetta", "dill", "olive oil"],
     image: "Pizza_002.svg",
@@ -34,7 +34,7 @@ const data = [
   {
     id: "508466586323403",
     name: "Sausage pizza",
-    chiliRate: "chili_mild.svg",
+    chiliRate: 2,
     sauce: "sauce_tomato.svg",
     toppings: [
       "Pork fennel sausage",
@@ -58,7 +58,7 @@ const data = [
   {
     id: "6818177016638838",
     name: "Potato and rosemary",
-    chiliRate: "chili_mild.svg",
+    chiliRate: 2,
     sauce: "sauce_sourecrema.svg",
     toppings: [
       "Fontina cheese",
@@ -88,7 +88,7 @@ const data = [
   {
     id: "6944102681332258",
     name: "Pizza Pomodoro",
-    chiliRate: "chili_hot.svg",
+    chiliRate: 1,
     sauce: "sauce_tomato.svg",
     toppings: [
       "roasted tomato",
@@ -110,13 +110,3 @@ const data = [
     price: 1590,
   },
 ];
-
-// const chili : ["chili_mild.svg", "chili_spicy.svg", "chili_hot.svg"];
-// const sauces : [
-//   "sauce_tomato.svg",
-//   "sauce_sourecrema.svg",
-//   "sauce_cheese.svg",
-//   "sauce_bbq.svg",
-// ];
-
-export default data;

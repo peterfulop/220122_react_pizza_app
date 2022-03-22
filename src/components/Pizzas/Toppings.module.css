@@ -1,9 +1,9 @@
-.pizza-list__element__toppings {
+.toppings {
   display: flex;
   padding-left: 0;
   margin: 0.5rem 0;
 }
-.pizza-list__element__toppings li {
+.toppings li {
   font-family: "Quicksand", sans-serif;
   list-style: none;
   background-color: #2f2f2f;
@@ -12,4 +12,8 @@
   padding: 5px 20px;
   border-radius: 15px;
   text-transform: capitalize;
+}
+
+.sauce {
+  width: 30px;
 }
