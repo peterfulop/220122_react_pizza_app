@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import AppHeader from "./components/UI/AppHeader";
 import PizzaList from "./components/PizzaList/PizzaList";
 import data from "./data/data.js";
+import CartProvider from "./store/CartProvider";
 
 import "./App.css";
 
@@ -57,7 +58,9 @@ function App() {
   return (
     <div className="App">
       <AppHeader orders={orders} />
-      <PizzaList pizzaList={pizzas} setOrderHandler={setOrderHandler} />
+      <main>
+        <PizzaList pizzaList={pizzas} setOrderHandler={setOrderHandler} />
+      </main>
     </div>
   );
 }

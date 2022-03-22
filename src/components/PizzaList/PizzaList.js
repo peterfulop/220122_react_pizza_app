@@ -1,15 +1,15 @@
 import React from "react";
 import PizzaListElement from "./PizzaListElement";
 
-const PizzaList = ({ pizzaList, setOrderHandler }) => {
+const PizzaList = (props) => {
   return (
     <div className="pizza-list">
-      {pizzaList.map((x) => {
+      {props.pizzaList.map((x) => {
         return (
           <PizzaListElement
             pizza={x}
             key={x.id}
-            setOrderHandler={setOrderHandler}
+            setOrderHandler={props.setOrderHandler}
           />
         );
       })}
