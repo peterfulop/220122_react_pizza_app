@@ -6,7 +6,7 @@ export const pizzas = [
     sauce: "sauce_tomato.svg",
     toppings: ["fresh mozzarella", "olive oil", "fresh basil"],
     image: "Pizza_001.svg",
-    price: 1190,
+    price: 2190,
   },
   {
     id: "3980483041685594",
@@ -15,7 +15,7 @@ export const pizzas = [
     sauce: "sauce_sourecrema.svg",
     toppings: ["fontina cheese", "sliced pancetta", "dill", "olive oil"],
     image: "Pizza_002.svg",
-    price: 1290,
+    price: 2290,
   },
   {
     id: "22027005404691113",
@@ -29,7 +29,7 @@ export const pizzas = [
       "dried oregano",
     ],
     image: "Pizza_003.svg",
-    price: 1290,
+    price: 2290,
   },
   {
     id: "508466586323403",
@@ -44,7 +44,7 @@ export const pizzas = [
       "leeks",
     ],
     image: "Pizza_004.svg",
-    price: 1390,
+    price: 2390,
   },
   {
     id: "2562923411992488",
@@ -53,7 +53,7 @@ export const pizzas = [
     sauce: "sauce_tomato.svg",
     toppings: ["whipped burrata", "pepperoni", "red pepper"],
     image: "Pizza_005.svg",
-    price: 1390,
+    price: 2390,
   },
   {
     id: "6818177016638838",
@@ -67,7 +67,7 @@ export const pizzas = [
       "olive oil",
     ],
     image: "Pizza_006.svg",
-    price: 1290,
+    price: 2290,
   },
   {
     id: "596170123450352",
@@ -83,7 +83,7 @@ export const pizzas = [
       "rosemary pesto",
     ],
     image: "Pizza_007.svg",
-    price: 1490,
+    price: 2490,
   },
   {
     id: "6944102681332258",
@@ -98,7 +98,7 @@ export const pizzas = [
       "olive oil",
     ],
     image: "Pizza_008.svg",
-    price: 1490,
+    price: 2490,
   },
   {
     id: "4304808710761556",
@@ -107,6 +107,6 @@ export const pizzas = [
     sauce: "sauce_tomato.svg",
     toppings: ["tomato", "fresh mozzarella", "fresh arugula", "Prosciutto"],
     image: "Pizza_009.svg",
-    price: 1590,
+    price: 2590,
   },
 ];

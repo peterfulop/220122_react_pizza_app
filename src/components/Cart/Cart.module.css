@@ -6,10 +6,6 @@
   overflow: auto;
 }
 
-.content {
-  /* margin: 1rem 0; */
-}
-
 .summary {
   font-size: 2rem;
   font-weight: bold;
@@ -18,6 +14,19 @@
 .total {
   font-size: 1.5rem;
   margin: 1rem 0;
+}
+.total-amount {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem;
+  margin-left: 0.5rem;
+  font-weight: bold;
+  width: 35px;
+  height: 35px;
+  background-color: white;
+  border-radius: 50%;
+  color: var(--pizzaTitle);
 }
 
 .amount {

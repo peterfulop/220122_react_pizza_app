@@ -1,6 +1,6 @@
 .actions {
   display: flex;
-  justify-content: start;
+  justify-content: flex-start;
   margin: 0.25rem;
 }
 
@@ -13,5 +13,4 @@
   border: 1px solid var(--pizzaTitle);
   border-radius: 0.25rem;
   font-weight: bold;
-  /* background-color: #ffc107; */
 }

@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { useState } from "react";
 import { Fragment } from "react/cjs/react.production.min";
 import CartContext from "../../store/cart-context";
 import Modal from "../UI/Modal";
@@ -9,6 +8,10 @@ import CartItem from "./CartItem";
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
   const isItemsInCart = cartCtx.items.length !== 0;
+
+  const numberOfCartItems = cartCtx.items.reduce((a, b) => {
+    return a + b.amount;
+  }, 0);
 
   const cartItemRemoveHandler = (id, removeAll) => {
     cartCtx.removeItem(id, removeAll);
@@ -39,9 +42,11 @@ const Cart = (props) => {
       <div className={styles.content}>
         {isItemsInCart ? (
           <Fragment>
-            <span className={styles.summary}>Summary</span>
-            {cartItems}
             <div className="d-flex justify-content-between">
+              <span className={styles.summary}>Summary</span>
+            </div>
+            {cartItems}
+            <div className="d-flex justify-content-between align-items-center">
               <span className={styles.total}>Total Amount:</span>
               <span className={styles.amount}>{cartCtx.totalAmount} Ft</span>
             </div>
@@ -55,7 +60,10 @@ const Cart = (props) => {
           Close
         </button>
         {isItemsInCart && (
-          <button className="btn btn-orange ms-2">Order</button>
+          <button className="d-flex justify-content-center align-items-center px-2 btn btn-orange ms-2">
+            <span>Order:</span>
+            <span className={styles["total-amount"]}>{numberOfCartItems}</span>
+          </button>
         )}
       </div>
     </Modal>

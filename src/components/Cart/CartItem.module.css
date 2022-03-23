@@ -2,6 +2,9 @@
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
+  border-bottom: 1px solid var(--pizzaTitle);
+  padding: 0.5rem 0;
+  margin-bottom: 1rem;
 }
 .name {
   font-size: 1.25rem;
@@ -13,7 +16,7 @@
   font-size: 1.125rem;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 785px) {
   .cart-item {
     display: block;
   }
