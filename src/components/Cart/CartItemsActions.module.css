@@ -1,9 +1,17 @@
-.amount-form {
+.actions {
   display: flex;
-  justify-content: flex-start;
-  margin: 0.25rem 0;
+  justify-content: start;
+  margin: 0.25rem;
 }
 
 .amount-input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 50px !important;
+  margin: 0 0.5rem;
+  border: 1px solid var(--pizzaTitle);
+  border-radius: 0.25rem;
+  font-weight: bold;
+  /* background-color: #ffc107; */
 }

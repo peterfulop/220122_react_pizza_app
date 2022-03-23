@@ -4,23 +4,32 @@ import { Fragment } from "react/cjs/react.production.min";
 import CartContext from "../../store/cart-context";
 import Modal from "../UI/Modal";
 import styles from "./Cart.module.css";
-import CartItemActions from "./CartItemActions";
+import CartItem from "./CartItem";
 
 const Cart = (props) => {
   const cartCtx = useContext(CartContext);
-
   const isItemsInCart = cartCtx.items.length !== 0;
+
+  const cartItemRemoveHandler = (id, removeAll) => {
+    cartCtx.removeItem(id, removeAll);
+  };
+
+  const cartItemAddHandler = (item) => {
+    cartCtx.addItem({ ...item, amount: 1 });
+  };
 
   const cartItems = (
     <ul className={styles["cart-items"]}>
-      {cartCtx.items.map((item, i) => (
-        <li
-          className="d-sm-flex d-block justify-content-between my-2 align-items-center"
+      {cartCtx.items.map((item) => (
+        <CartItem
           key={item.id}
-        >
-          {`${i + 1}. ${item.name} | ${item.amount} db - ${item.price} Ft`}
-          <CartItemActions />
-        </li>
+          amount={item.amount}
+          name={item.name}
+          price={item.price}
+          onAdd={cartItemAddHandler.bind(null, item)}
+          onReduce={cartItemRemoveHandler.bind(null, item.id, false)}
+          onDelete={cartItemRemoveHandler.bind(null, item.id, true)}
+        />
       ))}
     </ul>
   );
